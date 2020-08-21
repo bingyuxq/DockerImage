@@ -3,7 +3,9 @@ EXPOSE 5000
 WORKDIR /app
 
 RUN apt-get update \
- && apt-get -y install libssl-dev libgdiplus \
+ && apt-get -y install --allow-unauthenticated libgdiplus libc6-dev libx11-dev xvfb libssl-dev \
  && rm -rf /var/lib/apt/lists/*
-
-CMD /app/RoadFlow.Mvc
+ 
+ENV DISPLAY :10
+CMD nohup /usr/bin/Xvfb :10 -ac >> /dev/null 2>&1 & \
+ && /app/RoadFlow.Mvc
