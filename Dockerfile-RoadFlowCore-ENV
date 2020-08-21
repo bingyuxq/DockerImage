@@ -7,5 +7,5 @@ RUN apt-get update \
  && rm -rf /var/lib/apt/lists/*
  
 ENV DISPLAY :10
-CMD nohup /usr/bin/Xvfb :10 -ac >> /dev/null 2>&1 & \
- && /app/RoadFlow.Mvc
+CMD nohup /usr/bin/Xvfb :10 -ac >> /dev/null 2>&1 &
+CMD /app/RoadFlow.Mvc
