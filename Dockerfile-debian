@@ -6,4 +6,4 @@ RUN apt-get update \
  && apt-get -y install $packages \
  && rm -rf /var/lib/apt/lists/* \
  && echo "ENV init complete"
-RUN ["$filepath"]
+CMD $filepath
