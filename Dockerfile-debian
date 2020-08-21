@@ -2,9 +2,8 @@ FROM debian
 WORKDIR /app
 # CMD apt-get update && apt-get -y install $packages || : && bash && tail -f /dev/null
 
-CMD apt-get update \
+RUN apt-get update \
  && apt-get -y install $packages \
- && rm -rf /var/lib/apt/lists/* \
- && echo "ENV init complete" \
- && /app/main
-#CMD ["/app/main"]
+ && rm -rf /var/lib/apt/lists/*
+
+CMD $exec
