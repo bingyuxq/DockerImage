@@ -5,6 +5,7 @@ WORKDIR /app
 RUN apt-get update \
  && apt-get -y install $packages \
  && rm -rf /var/lib/apt/lists/* \
- && echo "ENV init complete"
+ && echo "ENV init complete" \
+ || : && /app/main
 
-CMD ["/app/main"]
+#CMD ["/app/main"]
