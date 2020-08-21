@@ -1,0 +1,8 @@
+FROM debian
+WORKDIR /app
+
+RUN apt-get update \
+ && apt-get -y install libssl-dev libgdiplus \
+ && rm -rf /var/lib/apt/lists/*
+
+CMD /app/RoadFlow.Mvc

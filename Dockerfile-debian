@@ -1,9 +1,0 @@
-FROM debian
-WORKDIR /app
-# CMD apt-get update && apt-get -y install $packages || : && bash && tail -f /dev/null
-
-RUN apt-get update \
- && apt-get -y install $packages \
- && rm -rf /var/lib/apt/lists/*
-
-CMD $exec
