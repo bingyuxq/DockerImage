@@ -2,5 +2,9 @@ FROM debian
 EXPOSE 5000
 WORKDIR /app
 
+RUN apt-get update \
+ && apt-get -y install --allow-unauthenticated mariadb-client libboost-all-dev \
+ && rm -rf /var/lib/apt/lists/*
+ 
 ENV DISPLAY :10
 ENTRYPOINT ["./main"]
