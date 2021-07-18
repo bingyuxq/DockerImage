@@ -1,0 +1,6 @@
+FROM debian
+EXPOSE 5000
+WORKDIR /app
+
+ENV DISPLAY :10
+ENTRYPOINT ["./main"]
